@@ -1,0 +1,22 @@
+<?component name="recaptcha" templateURI="recaptchaTemplate.zul"?>
+<zk>
+	<window apply="org.zkoss.bind.BindComposer"
+		viewModel="@id('vm')@init('greenglobal.recaptcha.MyViewModel')"
+		validationMessages="@id('vmsgs')" width="600px" vflex="1">
+		<grid id="form" viewModel="@id('vm')@init('greenglobal.recaptcha.MyViewModel')" width="400px">
+		<columns>
+			<column>Form</column>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+				<recaptcha sitekey="6Lcj5AYTAAAAAHp_ATdyZcWkMi7lzO_JZPMhYj4S" command="verify" />
+				</cell>
+			</row>
+			<row>
+				<button id="submit" disabled="@load(vm.disabled)" onClick="@command('submit')">submit</button>
+			</row>
+		</rows>
+	</grid>
+	</window>
+</zk>
